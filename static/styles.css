@@ -1,0 +1,138 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+}
+
+body.dark-mode .meme-card {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .subreddit {
+    color: #4da6ff;
+}
+
+body.dark-mode .refresh-note {
+    color: #aaa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.meme-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.meme-image img {
+    width: 100%;
+    display: block;
+}
+
+.meme-details {
+    padding: 20px;
+}
+
+.subreddit {
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.refresh-note {
+    color: #666;
+}
+
+.fa-bookmark,
+.fa-info-circle {
+    margin-right: 5px;
+}
+
+/* Theme toggle styles */
+.theme-toggle-checkbox {
+    display: none;
+}
+
+.theme-toggle-label {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    display: inline-block;
+}
+
+body.dark-mode .theme-toggle-label {
+    background-color: #4da6ff;
+}
+
+/* Use prefers-color-scheme to automatically switch themes based on system settings */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ddd;
+    }
+
+    .meme-card {
+        background-color: #1e1e1e;
+    }
+
+    .subreddit {
+        color: #4da6ff;
+    }
+
+    .refresh-note {
+        color: #aaa;
+    }
+
+    .theme-toggle-label {
+        background-color: #4da6ff;
+    }
+}
+
+/* Use the checkbox to toggle themes */
+#theme-toggle:checked ~ body {
+    background-color: #121212;
+    color: #ddd;
+}
+
+#theme-toggle:checked ~ body .meme-card {
+    background-color: #1e1e1e;
+}
+
+#theme-toggle:checked ~ body .subreddit {
+    color: #4da6ff;
+}
+
+#theme-toggle:checked ~ body .refresh-note {
+    color: #aaa;
+}
+
+#theme-toggle:checked ~ .theme-toggle-label {
+    background-color: #4da6ff;
+}
